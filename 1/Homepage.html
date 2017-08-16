@@ -84,19 +84,20 @@
 				<li><a class="nav-text" href="#"><img src="img/user.png" alt=""><span>登入/加入Bunny</span></a></li>
 
 			</ul>
+			<div class="hidden-lg hidden-md">
 
 
-			<div class="collapse col-xs-12 col-ms-12 hidden-md hidden-lg navbar-fixed-top-80px" id="myNavbar">
-				<ul class="nav navbar-nav">
-                    <li><a class="collapse in"  data-toggle="collapse" href="#collapseOne">找人幫你飛<span class="caret"></span></a>
-                    	<ul id="collapseOne" class="collapse nav navbar-nav">
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+                    <li><a class="dropdown-submenu"  data-toggle="dropdown">找人幫你飛<span class="caret"></span></a>
+                    	<ul id="collapseOne" class="dropdown-menu nav navbar-nav">
 
 
 
 
 
-								<li><a class="collapse in"  data-toggle="collapse" href="#country" href="#" style="padding-left:60px;">依國家尋找產品<span class="caret"></span></a>
-                    			<ul id="country" class="collapse nav navbar-nav">
+								<li><a class="dropdown-submenu"  data-toggle="dropdown"  style="padding-left:60px;">依國家尋找產品<span class="caret"></span></a>
+                    			<ul  class="dropdown-menu nav navbar-nav">
 	                    			<li><a href="../3/3-0.html?country=1">日本</a></li>
 		                            <li><a href="../3/3-0.html?country=2">韓國</a></li>
 		                            <li><a href="../3/3-0.html?country=3">泰國</a></li>
@@ -107,8 +108,8 @@
 		                            <li><a href="../3/3-0.html?country=8">西班牙</a></li>
                     			</ul>
 							</li>
-							<li><a class="collapse in"  data-toggle="collapse" href="#anyproduct" href="#" style="padding-left:60px;">依類別尋找產品<span class="caret"></span></a>
-                    			<ul id="anyproduct" class="collapse nav navbar-nav">
+							<li><a class="dropdown-submenu"  data-toggle="dropdown"  style="padding-left:60px;">依類別尋找產品<span class="caret"></span></a>
+                    			<ul  class="dropdown-menu nav navbar-nav">
 	                    			<li><a href="../3-1/3-1.html?category=1">名牌精品</a></li>
 		                            <li><a href="../3-1/3-1.html?category=2">流行服飾</a></li>
 		                            <li><a href="../3-1/3-1.html?category=3">美妝保樣</a></li>
@@ -122,8 +123,8 @@
 							</li>
 
 
-							<li><a class="collapse in"  data-toggle="collapse" href="#country2" href="#" style="padding-left:60px;">依國家尋找商城<span class="caret"></span></a>
-                    			<ul id="country2" class="collapse nav navbar-nav">
+							<li><a class="dropdown-submenu"  data-toggle="dropdown" style="padding-left:60px;">依國家尋找商城<span class="caret"></span></a>
+                    			<ul  class="dropdown-menu nav navbar-nav">
 	                    			<li><a href="../3/3-0.html?country=1">日本</a></li>
 		                            <li><a href="../3/3-0.html?country=2">韓國</a></li>
 		                            <li><a href="../3/3-0.html?country=3">泰國</a></li>
@@ -141,6 +142,9 @@
                     <li><a href="../5/5-0.html">會員專區</a></li>
 
 				</ul>
+				</li>
+				</ul>
+			</div>
 			</div>
 
 
@@ -323,6 +327,21 @@
       </div>
     </div>
   </footer>
+  <script>
+  	$(function(){
+      	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+	        //點擊時避免跟隨href位置
+	        event.preventDefault();
+	         //避免在點擊時關閉菜單
+	        event.stopPropagation();
+	        if($(this).parent().hasClass('open') == false){ //當class=open為否時
+	          $(this).parent().addClass('open');
+	        }else{
+	          $(this).parent().removeClass('open');
+	        }
+	    });
+	});
+</script>
 
 
 </body>
